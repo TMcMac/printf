@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * _printf - a homemade version of the classic printf function
@@ -10,15 +11,15 @@ int _printf(const char *format, ...)
 {
 	va_list arg;
 	int i = 0, j = 0;
-	buffer[1024] = {0};
+	char buffer[1024] = {0};
 
-	tp type_dict[] = {
+	pt type_dict[] = {
 		{"c", print_char},
 		{"s", print_string},
 		{NULL, NULL}
 	};
 
-	va_start(args, format);
+	va_start(arg, format);
 
 	while (format && format[i])
 	{
@@ -29,7 +30,8 @@ int _printf(const char *format, ...)
 			{
 				if(format[i] == type_dict[j].type[0])
 				{
-					type_dict[j].f(arg);
+					/*buffer[j] = type_dict[j].f(arg);*/
+					printf("x");
 				}
 				j++;
 			}
@@ -41,7 +43,7 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-	write (1, buff, j)
-	va_end(args);
+	write (1, buffer, j);
+	va_end(arg);
 	return (j);
 }
