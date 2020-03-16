@@ -14,29 +14,3 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 
 }
-
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and error is set appropriately.
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
-/**
- * _strlen - a function to return the length of a string
- * @s: a char pointer passed from main
- * Return: returns an int for the length of s
- */
-int _strlen(char *s)
-{
-	int len;
-
-	for (len = 0; s[len] != '\0'; len++)
-		continue;
-	return (len);
-}
