@@ -9,7 +9,7 @@
 typedef struct pointer
 {
 	char *type;
-	void (*)();
+	void (*f)();
 } pt;
 
 int _putchar(char c);
