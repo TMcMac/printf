@@ -1,0 +1,45 @@
+.TH _PRINTF 3 "Holberton Cohort 11" "March 2020" "Version 1.0"
+.SH NAME
+.B _printf \- a from scratch version of the classic printf function used to print a formated string.
+.SH SYNOPSIS
+.B #include "holberton.h"
+.br
+int _printf(const char *format, ...);
+.SH DESCRIPTION
+.B _printf
+ A function to produce and output string including any formated output according to a formatted specifier. 
+
+.br
+.B %
+The percent symbol is our trigger char which lets our _printf function know that a format specifier is next and we will need to call a type matched function in order to properly add the formated data to our output string. 
+
+.br
+.B c
+%c is not for cookie, but instead for char, or a single character to be added to our string
+
+.br
+.B s
+The %s specifier means that a string value or char * is the data expected so string concat will be needed to add the formatted information to our output string. 
+
+.br
+.B i
+The %i specifier indicated that an integer will be the data type to be added to our output string.
+
+.br
+.B d
+The %d indicates that a decimal integer is the formatted data type to be added to our output string. 
+
+.br
+.B Return Value
+Upon successful return, these functions return the number of characters printed 
+(excluding the null byte used to end output to strings)
+If an output error is encountered, a negative value is returned.
+
+.SH OPTIONS
+None.
+.SH SEE ALSO
+.I man printf(3)
+.SH BUGS
+Hopefully no bugs and an all green checker! If you find a bug let Tim and Jacob know.
+.SH AUTHOR
+Written by Jacob Ide and Tim McMacken, Holberton Tulsa Cohort 11 (1), March 2020.
