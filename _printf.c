@@ -8,7 +8,7 @@
  */
 int _printf(const char *format, ...)
 {
-	va_list args;
+	va_list arg;
 	int i = 0, j = 0;
 	buffer[1024] = {0};
 
@@ -24,7 +24,15 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			/*go get formated args formula*/
+			i++;
+			while (type_dict[j].type != NULL)
+			{
+				if(format[i] == type_dict[j].type[0])
+				{
+					type_dict[j].f(arg);
+				}
+				j++;
+			}
 		}
 		else
 		{
