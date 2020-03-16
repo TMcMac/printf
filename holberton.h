@@ -6,6 +6,12 @@
 #include <stdio.h>
 #include <unistd.h>
 
+typedef struct pointer
+{
+	char *type;
+	void (*)();
+} pt;
+
 int _putchar(char c);
 int _strlen(char *s);
 void _puts(char *str);
