@@ -5,8 +5,9 @@
  * @a: char to be added to buffer
  * Return: char to be added to buffer
  */
-int print_char(va_list arg)
+void print_char()
 {
+	;
 	/*do stuff to add char to buffer*/;
 }
 
@@ -15,7 +16,8 @@ int print_char(va_list arg)
  * @arg: string to be parsed
  * Return: product
  */
-int print_string(va_list arg)
+void print_string()
 {
+	;
 	/*do stuff to add string to buffer*/;
 }
