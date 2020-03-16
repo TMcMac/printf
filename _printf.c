@@ -30,8 +30,7 @@ int _printf(const char *format, ...)
 			{
 				if(format[i] == type_dict[j].type[0])
 				{
-					/*buffer[j] = type_dict[j].f(arg);*/
-					printf("x");
+					buffer[j] = type_dict[j].f(arg);
 				}
 				j++;
 			}
