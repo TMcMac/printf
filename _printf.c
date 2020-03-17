@@ -19,21 +19,21 @@ int _printf(const char *format, ...)
                 {'i', print_int},
                 {'d', print_dec},
                 {'%', print_prct},
-                {NULL, NULL}
+                {'\0', NULL}
         };
         if (format == NULL)
                 return (-1);
         va_start(arg, format);
         while (format && format[inputpos])
         {
-                if (format[inputpos] == %)
+                if (format[inputpos] == '%')
                 {
                         inputpos++;
-                        while (type_dict[dictinc].type != NULL)
+                        while (type_dict[dictinc].type != '\0')
                         {
-                                if (format[inputpos] == type_dict[dictinc].type[0])
+                                if (format[inputpos] == type_dict[dictinc].type)
                                 {
-                                        type_dict[dictinc].f(arg, bufposptr, buffer));
+                                        type_dict[dictinc].f(arg, bufposptr, buffer);
 			}
 		}
 	}
