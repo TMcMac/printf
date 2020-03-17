@@ -18,6 +18,6 @@ void _puts(char *str);
 char *_strcpy(char *dest, char *src);
 
 int _printf(const char *format, ...);
-void print_char();
-void print_string();
+int print_char(va_list arg);
+int print_string(va_list arg);
 #endif

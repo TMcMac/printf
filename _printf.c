@@ -10,22 +10,31 @@
 int _printf(const char *format, ...)
 {
 	va_list arg;
-	int i = 0, j = 0;
+	int i = 0;
+	int j;
 	char buffer[1024] = {0};
-/*
+
 	pt type_dict[] = {
 		{"c", print_char},
 		{"s", print_string},
 		{NULL, NULL}
 	};
-*/
+
+
+        pt type_dict[] = {
+                {"c", print_char},
+                {"s", print_string},
+                {NULL, NULL}
+        };
+
+
 	va_start(arg, format);
 
 	while (format && format[i])
 	{
 		if (format[i] == '%')
 		{
-/*			i++;
+			i++;
 			while (type_dict[j].type != NULL)
 			{
 				if(format[i] == type_dict[j].type[0])
@@ -33,7 +42,6 @@ int _printf(const char *format, ...)
 					buffer[j] = (type_dict[j].f(arg));
 				}
 				j++;
-				}*/
 		}
 		else
 		{
@@ -42,7 +50,7 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-	write (1, buffer, j);
+	write (1, buffer, i);
 	va_end(arg);
-	return (j);
+	return (i);
 }
