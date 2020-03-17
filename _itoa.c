@@ -3,14 +3,14 @@
 int power(int base, int exp);
 
 /**
- * print_number - a function to print any integer using only putchar
+ * _print_number - a function to print any integer using only putchar
  *
  * @n: an int of any size passed from main
  *
  * Return: no return
  */
 
-char* _print_number(int n)
+char *_print_number(int n)
 {
 	int num = n;
 	int pwr = 0;
