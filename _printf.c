@@ -9,48 +9,44 @@
  */
 int _printf(const char *format, ...)
 {
-	va_list arg;
-	int i = 0;
-	int j;
-	char buffer[1024] = {0};
 
-	pt type_dict[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{NULL, NULL}
-	};
-
+        va_list arg;
+        int inputpos = 0, bufpos = 0, dictinc = 0;
+        char buffer[1024] = {0};
+        int *bufposptr = &bufpos;
 
         pt type_dict[] = {
-                {"c", print_char},
-                {"s", print_string},
-                {NULL, NULL}
+                {'c', print_char},
+                {'i', print_int},
+                {'d', print_dec},
+                {'%', print_prct},
+                {'\0', NULL}
         };
+        if (format == NULL)
+                return (-1);
+        va_start(arg, format);
+        while (format && format[inputpos])
+        {
+                if (format[inputpos] == '%')
+                {
+                        inputpos++;
+                        while (type_dict[dictinc].type != '\0')
+                        {
+                                if (format[inputpos] == type_dict[dictinc].type)
+                                {
+                                        type_dict[dictinc].f(arg, bufposptr, buffer);
+			}
 
-
-	va_start(arg, format);
-
-	while (format && format[i])
-	{
-		if (format[i] == '%')
-		{
-			i++;
-			while (type_dict[j].type != NULL)
-			{
-				if(format[i] == type_dict[j].type[0])
-				{
-					buffer[j] = (type_dict[j].f(arg));
-				}
-				j++;
 		}
-		else
-		{
-			buffer[j] = format[i];
-			j++;
-		}
-		i++;
 	}
-	write (1, buffer, i);
-	va_end(arg);
-	return (i);
+	else
+	{
+		buffer[bufpos] = format[inputpos];
+		inputpos++;
+		bufpos++;
+	}
+}
+write(1, buffer, bufpos);
+va_end(arg);
+return (0);
 }
