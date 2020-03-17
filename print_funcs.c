@@ -34,7 +34,7 @@ int print_string(va_list arg, int *bufpos, char *bufptr)
  * print_int - takes in an integer
  * Returns the int as a char
  */
-/*
+
 int print_int(va_list arg, int *bufpos, char *bufptr)
 {
         int a = va_arg(arg, int);
@@ -50,7 +50,7 @@ int print_int(va_list arg, int *bufpos, char *bufptr)
 
         return (0);
 }
-
+/*
 int print_prct(int *bufpos, char *bufptr)
 {
         char a = '%';
