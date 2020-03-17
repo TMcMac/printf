@@ -8,9 +8,9 @@
 
 int print_char(va_list arg, int *bufpos, char *bufptr)
 {
-        char a = arg;
+        char a = va_arg(arg, int);
         *(bufptr + (*bufpos)) = a;
-        *bufpos++;
+        bufpos++;
         return(0);
 }
 
@@ -20,8 +20,11 @@ int print_char(va_list arg, int *bufpos, char *bufptr)
  * Return: product
  */
 
-int print_string(va_list arg, int *bufpos, char *buffptr)
+int print_string(va_list arg, int *bufpos, char *bufptr)
 {
+	char a = va_arg(arg, int);
+	*(bufptr + (*bufpos)) = a;
+        bufpos++;
         return(0);
 }
 
@@ -31,7 +34,7 @@ int print_string(va_list arg, int *bufpos, char *buffptr)
  */
 int print_int(va_list arg, int *bufpos, char *bufptr)
 {
-        int a = arg;
+        int a = va_arg(arg, int);
         int i = 0;
         char tmp[10];
         itoa(a, tmp, 10);
@@ -39,7 +42,7 @@ int print_int(va_list arg, int *bufpos, char *bufptr)
         while (tmp[i] != '\0')
         {
                 *(bufptr + (*bufpos)) = tmp[i];
-                *bufpos++;
+                bufpos++;
                 i++;
         }
 
@@ -50,7 +53,7 @@ int print_prct(va_list arg, int *bufpos, char *bufptr)
 {
         char a = '%';
         *(bufptr + *bufpos) = a;
-        *bufpos++;
+        bufpos++;
 
         return (0);
 }
