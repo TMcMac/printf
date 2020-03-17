@@ -5,9 +5,12 @@
  * @a: char to be added to buffer
  * Return: char to be added to buffer
  */
-char print_char(va_list arg)
+int print_char(va_list arg, int *bufpos, char *bufptr)
 {
-	return(arg);
+        char a = arg;
+        *(bufptr + (*bufpos)) = a;
+        *bufpos++;
+        return(0);
 }
 
 /**
@@ -15,7 +18,37 @@ char print_char(va_list arg)
  * @arg: string to be parsed
  * Return: product
  */
-char print_string(va_list arg)
+int print_string(va_list arg, int *bufpos, char *buffptr)
 {
-	return(arg);
+        return(0);
+}
+
+/**
+ * print_int - takes in an integer
+ * Returns the int as a char
+ */
+int print_int(va_list arg, int *bufpos, char *bufptr)
+{
+        int a = arg;
+        int i = 0;
+        char tmp[10];
+        itoa(a, tmp, 10);
+
+        while (tmp[i] != '\0')
+        {
+                *(bufptr + (*bufpos)) = tmp[i];
+                *bufpos++;
+                i++;
+        }
+
+        return (0);
+}
+
+int print_prct(va_list arg, int *bufpos, char *bufptr)
+{
+        char a = '%';
+        *(bufptr + *bufpos) = a;
+        *bufpos++;
+
+        return (0);
 }
