@@ -18,8 +18,15 @@ char* _print_number(int n)
 	int base = 10;
 	int divider;
 	int tmp = 0;
-	char tmpbuf[11] = {'\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0'}
+	char *tmpbuf = malloc(sizeof(char) * 11);
 	int counter = 0;
+
+	for (counter = 0; counter < 11; counter++)
+	{
+		tmpbuf[counter] = '\0';
+	}
+
+	counter = 0;
 
 	if (num == 0)
 		tmpbuf[0] = '0';
