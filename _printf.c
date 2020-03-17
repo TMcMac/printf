@@ -9,6 +9,7 @@
  */
 int _printf(const char *format, ...)
 {
+
         va_list arg;
         int inputpos = 0, bufpos = 0, dictinc = 0;
         char buffer[1024] = {0};
@@ -35,6 +36,7 @@ int _printf(const char *format, ...)
                                 {
                                         type_dict[dictinc].f(arg, bufposptr, buffer);
 			}
+
 		}
 	}
 	else

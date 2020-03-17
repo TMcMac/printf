@@ -5,6 +5,7 @@
  * @a: char to be added to buffer
  * Return: char to be added to buffer
  */
+
 int print_char(va_list arg, int *bufpos, char *bufptr)
 {
         char a = arg;
@@ -18,6 +19,7 @@ int print_char(va_list arg, int *bufpos, char *bufptr)
  * @arg: string to be parsed
  * Return: product
  */
+
 int print_string(va_list arg, int *bufpos, char *buffptr)
 {
         return(0);
