@@ -29,5 +29,5 @@ int print_char(va_list arg, int *bufposptr, char *bufptr);
 int print_string(va_list arg, int *bufposptr, char *bufptr);
 int print_int(va_list arg, int *bufposptr, char *bufptr);
 int print_dec(va_list arg, int *bufposptr, char *bufptr);
-int print_prct(va_list arg, int *bufpostptr, char *bufptr);
+int print_prct(int *bufpostptr, char *bufptr);
 #endif

@@ -49,7 +49,7 @@ int print_int(va_list arg, int *bufpos, char *bufptr)
         return (0);
 }
 
-int print_prct(va_list arg, int *bufpos, char *bufptr)
+int print_prct(int *bufpos, char *bufptr)
 {
         char a = '%';
         *(bufptr + *bufpos) = a;
