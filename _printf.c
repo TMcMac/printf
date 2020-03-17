@@ -17,8 +17,8 @@ int _printf(const char *format, ...)
 
         pt type_dict[] = {
                 {'c', print_char},
-                /* {'i', print_int},
-		{'d', print_dec},
+                {'i', print_int},
+		/*{'d', print_dec},
 	        {'%', print_prct},*/
                 {'\0', NULL}
         };
