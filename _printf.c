@@ -30,15 +30,16 @@ int _printf(const char *format, ...)
                 if (format[inputpos] == '%')
                 {
                         inputpos++;
-                        while (type_dict[dictinc].type != '\0')
+                        while (type_dict[dictinc].type !='\0')
                         {
                                 if (format[inputpos] == type_dict[dictinc].type)
                                 {
                                         type_dict[dictinc].f(arg, bufposptr, buffer);
+				}
+				break;
 			}
 
 		}
-	}
 	else
 	{
 		buffer[bufpos] = format[inputpos];
