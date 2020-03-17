@@ -1,6 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
-#include <math.h>
 
 int power(int base, int exp);
 
@@ -12,7 +10,7 @@ int power(int base, int exp);
  * Return: no return
  */
 
-char* print_number(int n)
+char* _print_number(int n)
 {
 	int num = n;
 	int pwr = 0;
@@ -20,14 +18,14 @@ char* print_number(int n)
 	int base = 10;
 	int divider;
 	int tmp = 0;
-	char tmp[11] = {'\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0'}
+	char tmpbuf[11] = {'\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0'}
 	int counter = 0;
 
 	if (num == 0)
-		tmp[0] = '0';
+		tmpbuf[0] = '0';
 	else if (num < 0)
 	{
-		tmp[0] = ('-');
+		tmpbuf[0] = ('-');
 		counter++;
 	}
 
@@ -43,11 +41,11 @@ char* print_number(int n)
 		tmp = (n / divider);
 		if (tmp < 0)
 			tmp *= -1;
-		tmp[counter] = (tmp + '0');
+		tmpbuf[counter] = (tmp + '0');
 		n = (n % divider);
 		counter++;
 	}
-	return (tmp);
+	return (tmpbuf);
 }
 
 /**
