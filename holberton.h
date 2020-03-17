@@ -24,7 +24,7 @@ char *_strcpy(char *dest, char *src);
 char *  itoa ( int value, char * str, int base );
 int _printf(const char *format, ...);
 int _putchar(char c);
-
+char* print_number(int n);
 int print_char(va_list arg, int *bufposptr, char *bufptr);
 int print_string(va_list arg, int *bufposptr, char *bufptr);
 int print_int(va_list arg, int *bufposptr, char *bufptr);
