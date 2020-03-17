@@ -1,4 +1,4 @@
-#include "holberton.h"
+B#include "holberton.h"
 #include <stdio.h>
 
 /**
@@ -14,14 +14,10 @@ int _printf(const char *format, ...)
 	int inputpos = 0, bufpos = 0, dictinc = 0;
 	char buffer[1024] = {0};
 	int *bufposptr = &bufpos;
-
 	pt type_dict[] = {
-		{'c', print_char},
-		{'i', print_int},
-/*{'d', print_dec},
-{'%', print_prct},*/
-		{'\0', NULL}
+		{'c', print_char}, {'i', print_int}, {'\0', NULL}
 	};
+
 	if (format == NULL)
 		return (-1);
 	va_start(arg, format);
@@ -47,8 +43,7 @@ int _printf(const char *format, ...)
 			bufpos++;
 		}
 	}
-}
-write(1, buffer, bufpos);
-va_end(arg);
-return (0);
+	write(1, buffer, bufpos);
+	va_end(arg);
+	return (0);
 }
