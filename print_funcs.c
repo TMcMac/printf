@@ -1,5 +1,7 @@
 #include "holberton.h"
-
+#include <stdio.h>
+#include "stdlib.h"
+#include <string.h>
 /**
  * print_char - add two ints
  * @a: char to be added to buffer
@@ -32,12 +34,13 @@ int print_string(va_list arg, int *bufpos, char *bufptr)
  * print_int - takes in an integer
  * Returns the int as a char
  */
+/*
 int print_int(va_list arg, int *bufpos, char *bufptr)
 {
         int a = va_arg(arg, int);
         int i = 0;
         char tmp[10];
-        itoa(a, tmp, 10);
+	itoa(a, tmp, 10);
 
         while (tmp[i] != '\0')
         {
@@ -57,3 +60,4 @@ int print_prct(int *bufpos, char *bufptr)
 
         return (0);
 }
+*/

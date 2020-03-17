@@ -9,6 +9,9 @@
  */
 int main(void)
 {
+	char i;
+	i = 'a';
 	_printf("Test sentence.\n");
+	_printf("%c", i);
 	return (0);
 }
