@@ -39,8 +39,7 @@ int print_int(va_list arg, int *bufpos, char *bufptr)
 {
         int a = va_arg(arg, int);
         int i = 0;
-        char tmp[10];
-	itoa(a, tmp, 10);
+        char *tmp = _print_number(a);
 
         while (tmp[i] != '\0')
         {
