@@ -1,4 +1,4 @@
-B#include "holberton.h"
+#include "holberton.h"
 #include <stdio.h>
 
 /**
@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
 	int inputpos = 0, bufpos = 0, dictinc = 0;
 	char buffer[1024] = {0};
 	int *bufposptr = &bufpos;
+	void *data;
 	pt type_dict[] = {
 		{'c', print_char}, {'i', print_int}, {'\0', NULL}
 	};
@@ -30,7 +31,9 @@ int _printf(const char *format, ...)
 			{
 				if (format[inputpos] == type_dict[dictinc].type)
 				{
-					type_dict[dictinc].f(arg, bufposptr, buffer);
+					data = malloc(sizeof(char)*60);
+					data = va_arg(arg, int);
+					type_dict[dictinc].f(data, bufposptr, buffer);
 				}
 				break;
 			}
