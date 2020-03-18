@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 				if (format[inputpos] == type_dict[dictinc].type)
 				{
 					data = malloc(sizeof(char)*60);
-					data = va_arg(arg, int);
+					data = va_arg(arg, char *);
 					type_dict[dictinc].f(data, bufposptr, buffer);
 				}
 				break;
