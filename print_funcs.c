@@ -59,7 +59,6 @@ int print_int(va_list arg, int *bufpos, char *bufptr)
 }
 /**
  * print_prct - takes in an integer
- * @arg: passed arg from va_args
  * @bufpos: buffer position
  * @bufptr: puffer pointer
  * Return: zero
@@ -68,7 +67,7 @@ int print_int(va_list arg, int *bufpos, char *bufptr)
 int print_prct(int *bufpos, char *bufptr)
 {
 	char a = '%';
-        *(bufptr + (*bufpos)) = a;
-        bufpos++;
-        return (0);
+	*(bufptr + (*bufpos)) = a;
+	bufpos++;
+	return (0);
 }
