@@ -8,12 +8,12 @@
  * Return: char to be added to buffer
  */
 
-int print_char(va_list arg, int *bufpos, char *bufptr)
+int print_char(void *data, int *bufpos, char *bufptr)
 {
-	char a = va_arg(arg, int);
-	*(bufptr + (*bufpos)) = a;
-	bufpos++;
-	return (0);
+        char a = *(char *)data;
+        *(bufptr + (*bufpos)) = a;
+        bufpos++;
+        return (0);
 }
 
 /**
@@ -22,9 +22,9 @@ int print_char(va_list arg, int *bufpos, char *bufptr)
  * Return: product
  */
 
-int print_string(va_list arg, int *bufpos, char *bufptr)
+int print_string(void *data, int *bufpos, char *bufptr)
 {
-	char a = va_arg(arg, int);
+	char a =*(char *)data;
 	*(bufptr + (*bufpos)) = a;
 	bufpos++;
 	return (0);
@@ -35,20 +35,21 @@ int print_string(va_list arg, int *bufpos, char *bufptr)
  * Returns the int as a char
  */
 
-int print_int(va_list arg, int *bufpos, char *bufptr)
+int print_int(void *data, int *bufpos, char *bufptr)
 {
-	int a = va_arg(arg, int);
-	int i = 0;
-	char *tmp = _print_number(a);
 
-	while (tmp[i] != '\0')
-	{
-		*(bufptr + (*bufpos)) = tmp[i];
-		bufpos++;
-		i++;
-	}
+        int a = *(int *)data;
+        int i = 0;
+        char *tmp = _print_number(a);
 
-	return (0);
+        while (tmp[i] != '\0')
+        {
+                *(bufptr + (*bufpos)) = tmp[i];
+                bufpos++;
+                i++;
+        }
+
+        return (0);
 }
 /*
 int print_prct(int *bufpos, char *bufptr)
