@@ -7,11 +7,11 @@
 int _printf(const char *format, ...);
 .SH DESCRIPTION
 .B _printf
- A function to produce and output string including any formated output according to a formatted specifier. 
+ A function to produce and output string including any formated output according to a formatted specifier.
 
 .br
 .B %
-The percent symbol is our trigger char which lets our _printf function know that a format specifier is next and we will need to call a type matched function in order to properly add the formated data to our output string. 
+The percent symbol is our trigger char which lets our _printf function know that a format specifier is next and we will need to call a type matched function in order to properly add the formated data to our output string.
 
 .br
 .B c
@@ -19,7 +19,7 @@ The percent symbol is our trigger char which lets our _printf function know that
 
 .br
 .B s
-The %s specifier means that a string value or char * is the data expected so string concat will be needed to add the formatted information to our output string. 
+The %s specifier means that a string value or char * is the data expected so string concat will be needed to add the formatted information to our output string.
 
 .br
 .B i
@@ -27,11 +27,11 @@ The %i specifier indicated that an integer will be the data type to be added to 
 
 .br
 .B d
-The %d indicates that a decimal integer is the formatted data type to be added to our output string. 
+The %d indicates that a decimal integer is the formatted data type to be added to our output string.
 
 .br
 .B Return Value
-Upon successful return, these functions return the number of characters printed 
+Upon successful return, these functions return the number of characters printed
 (excluding the null byte used to end output to strings)
 If an output error is encountered, a negative value is returned.
 
