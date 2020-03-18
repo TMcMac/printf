@@ -10,10 +10,10 @@
 
 int print_char(void *data, int *bufpos, char *bufptr)
 {
-        char a =*(char *)data;
+        char a = *(char *)data;
         *(bufptr + (*bufpos)) = a;
         bufpos++;
-        return(0);
+        return (0);
 }
 
 /**
@@ -26,8 +26,8 @@ int print_string(void *data, int *bufpos, char *bufptr)
 {
 	char a =*(char *)data;
 	*(bufptr + (*bufpos)) = a;
-        bufpos++;
-        return(0);
+	bufpos++;
+	return (0);
 }
 
 /**
@@ -37,6 +37,7 @@ int print_string(void *data, int *bufpos, char *bufptr)
 
 int print_int(void *data, int *bufpos, char *bufptr)
 {
+
         int a = *(int *)data;
         int i = 0;
         char *tmp = _print_number(a);
