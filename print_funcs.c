@@ -7,10 +7,11 @@
  * Return: pointer to our array holding a char
  */
 
-char * print_char(va_list arg)
+char *print_char(va_list arg)
 {
 	char a  = va_arg(arg, int);
 	char *b = &a;
+
 	return (b);
 }
 
@@ -20,21 +21,20 @@ char * print_char(va_list arg)
  * Return: a ptr to be concatonated
  */
 
-char * print_string(va_list arg)
+char *print_string(va_list arg)
 {
 	char *a = va_arg(arg, char *);
+
 	return (a);
 }
 
 /**
- * print_int - takes in an integer
+ * print_int - takes in an integer and turns it to a string
  * @arg: passed arg from va_args
- * @bufpos: buffer position
- * @bufptr: puffer pointer
- * Return: zero
+ * Return: pointer to string of int as chars
  */
 
-char * print_int(va_list arg)
+char *print_int(va_list arg)
 {
 	int a = va_arg(arg, int);
 	char *tmp = _print_number(a);

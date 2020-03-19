@@ -63,4 +63,4 @@ Handle the following conversion specifiers:**
 * You don’t have to handle the length modifiers
 
 ## **Built By**
-Jacob Ide and Tim McMacken, Holberton Tulsa, Cohort 11 (Tulsa 1), March 2020. 
+Jacob Ide and Tim McMacken, Holberton Tulsa, Cohort 11 (Tulsa 1), March 2020.

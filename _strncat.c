@@ -12,7 +12,7 @@ int _strncat(char *dest, char *src)
 	int counter = 0;
 	int start = _strlen(dest);
 	int test = _strlen(src);
-		
+
 	while (test > 0)
 	{
 		dest[start] = src[counter];
