@@ -1,37 +1,29 @@
 #include "holberton.h"
-#include <stdio.h>
-#include "stdlib.h"
-#include <string.h>
+
+
 /**
- * print_char - add two ints
+ * print_char - take in a char and return it in a string
  * @arg: passed arg from va_args
- * @bufpos: buffer position
- * @bufptr: puffer pointer
- * Return: zero
+ * Return: pointer to our array holding a char
  */
 
-int print_char(va_list arg, int *bufpos, char *bufptr)
+char * print_char(va_list arg)
 {
-	char a = va_arg(arg, int);
-	*(bufptr + (*bufpos)) = a;
-	bufpos++;
-	return (0);
+	char a  = va_arg(arg, int);
+	char *b = &a;
+	return (b);
 }
 
 /**
- * print_string - subtract two ints
+ * print_string - take in a string from va_arg, return it in an array
  * @arg: passed arg from va_args
- * @bufpos: buffer position
- * @bufptr: puffer pointer
- * Return: zero
+ * Return: a ptr to be concatonated
  */
 
-int print_string(va_list arg, int *bufpos, char *bufptr)
+char * print_string(va_list arg)
 {
-	char a = va_arg(arg, int);
-	*(bufptr + (*bufpos)) = a;
-	bufpos++;
-	return (0);
+	char *a = va_arg(arg, char *);
+	return (a);
 }
 
 /**
@@ -42,18 +34,10 @@ int print_string(va_list arg, int *bufpos, char *bufptr)
  * Return: zero
  */
 
-int print_int(va_list arg, int *bufpos, char *bufptr)
+char * print_int(va_list arg)
 {
 	int a = va_arg(arg, int);
-	int i = 0;
 	char *tmp = _print_number(a);
 
-	while (tmp[i] != '\0')
-	{
-		*(bufptr + (*bufpos)) = tmp[i];
-		bufpos++;
-		i++;
-	}
-
-	return (0);
+	return (tmp);
 }
