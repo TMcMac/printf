@@ -41,3 +41,17 @@ char *print_int(va_list arg)
 
 	return (tmp);
 }
+/**
+ * print_prct - takes in an integer
+ * @bufpos: buffer position
+ * @bufptr: puffer pointer
+ * Return: zero
+ */
+
+int print_prct(int *bufpos, char *bufptr)
+{
+	char a = '%';
+	*(bufptr + (*bufpos)) = a;
+	bufpos++;
+	return (0);
+}
