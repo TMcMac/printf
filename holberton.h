@@ -20,12 +20,4 @@ typedef struct pointer
 	char * (*f)(va_list ap);
 } pt;
 
-int _printf(const char *format, ...);
-int _strlen(char *s);
-int _strncat(char *dest, char *src);
-char *print_int(va_list);
-char *print_char(va_list);
-char *print_string(va_list);
-char *_print_number(int n);
-
 #endif
