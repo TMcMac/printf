@@ -1,4 +1,4 @@
-B#include "holberton.h"
+#include "holberton.h"
 /**
  * _printf - Funtion to print %formated text
  * @format: Formatted string to be parsed and formated
