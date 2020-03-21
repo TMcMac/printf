@@ -25,4 +25,5 @@ int _putchar(char c);
 int formattype(char a, va_list ap);
 int print_char(va_list ap);
 int print_string(va_list ap);
+int power(int base, int exp);
 #endif
