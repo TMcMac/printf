@@ -28,9 +28,11 @@ int _printf(const char *format, ...)
 			}
 		}
 		else
+		{
 			_putchar(str[i]);
-		i++;
-		count++;
+			count++;
+		}
+		i++
 	}
 	va_end(ap);
 	return (count);
