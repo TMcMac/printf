@@ -54,6 +54,7 @@ int formattype(char a, va_list ap)
 		{'c', print_char},
 		{'s', print_string},
 		{'i', print_int},
+		{'d', print_int},
 		{'\0', NULL}
 		};
 	while (type_dict[i].type)
