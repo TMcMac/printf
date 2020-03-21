@@ -17,7 +17,12 @@
 typedef struct pointer
 {
 	char type;
-	char * (*f)(va_list ap);
+	int (*f)(va_list ap);
 } pt;
 
+int _printf(const char *format, ...);
+int _putchar(char c);
+int formattype(char a, va_list ap);
+int print_char(va_list ap);
+int print_string(va_list ap);
 #endif
