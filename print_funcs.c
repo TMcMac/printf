@@ -23,6 +23,9 @@ int print_string(va_list ap)
 	int i = 0;
 	char *a = va_arg(ap, int);
 
+	if (a == NULL)
+		a = "(null)";
+
 	while (a[i] != '\0')
 	{
 		_putchar(a[i]);
