@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 			_putchar(str[i]);
 			count++;
 		}
-		i++
+		i++;
 	}
 	va_end(ap);
 	return (count);
