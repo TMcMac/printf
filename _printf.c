@@ -53,7 +53,7 @@ int formattype(char a, va_list ap)
 	pt type_dict[] = {
 		{'c', print_char},
 		{'s', print_string},
-		/*{'i', print_int},*/
+		{'i', print_int},
 		{'\0', NULL}
 		};
 	while (type_dict[i].type)

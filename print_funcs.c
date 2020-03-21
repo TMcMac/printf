@@ -33,3 +33,16 @@ int print_string(va_list ap)
 	}
 	return (i);
 }
+/**
+ * print_int - Prints a char as passed from va_list
+ * @ap: the list
+ * Return: the length of the string
+ */
+int print_int(va_list ap)
+{
+	int i;
+
+	i = (print_number(va_arg(ap, int)));
+
+	return (i);
+}
