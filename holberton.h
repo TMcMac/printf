@@ -17,17 +17,12 @@
 typedef struct pointer
 {
 	char type;
-	int (*f)(va_list, int *, char *);
+	int (*f)(va_list ap);
 } pt;
 
-int _strlen(char *s);
-char *_strcpy(char *dest, char *src);
 int _printf(const char *format, ...);
 int _putchar(char c);
-char *_print_number(int n);
-int print_char(va_list arg, int *bufposptr, char *bufptr);
-int print_string(va_list arg, int *bufposptr, char *bufptr);
-int print_int(va_list arg, int *bufposptr, char *bufptr);
-int print_dec(va_list arg, int *bufposptr, char *bufptr);
-/*int print_prct(int *bufpostptr, char *bufptr);*/
+int formattype(char a, va_list ap);
+int print_char(va_list ap);
+int print_string(va_list ap);
 #endif

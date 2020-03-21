@@ -1,49 +1,72 @@
 #include "holberton.h"
-#include <stdio.h>
-
 /**
- * _printf - a homemade version of the classic printf function
- * a variadic C function to print type specified data and strings.
- * @format: a format specifier
- * Return: 0 for success
- */
+ * _printf - Funtion to print %formated text
+ * @format: Formatted string to be parsed and formated
+ * Return: Number of characters printed
+ **/
 int _printf(const char *format, ...)
 {
+	const char *str = format;
+	va_list ap;
+	int i = 0;
+	int tmp = 0;
+	int count = 0;
 
-	va_list arg;
-	int inputpos = 0, bufpos = 0, dictinc = 0;
-	char buffer[1024] = {0};
-	int *bufposptr = &bufpos;
-	pt type_dict[] = {
-		{'c', print_char}, {'i', print_int}, {'\0', NULL}
-	};
+	va_start(ap, format);
 
-	if (format == NULL)
-		return (-1);
-	va_start(arg, format);
-	while (format && format[inputpos])
+	while (str[i] != '\0')
 	{
-		if (format[inputpos] == '%')
+		if (str[i] == '%')
 		{
-			inputpos++;
-			while (type_dict[dictinc].type != '\0')
+			i++;
+			if (str[i] == '%')
+				_putchar('%');
+			else
 			{
-				if (format[inputpos] == type_dict[dictinc].type)
-				{
-					type_dict[dictinc].f(arg, bufposptr, buffer);
-				}
-				break;
+				tmp = formattype(str[i], ap);
+				count += tmp;
 			}
-
 		}
 		else
 		{
-			buffer[bufpos] = format[inputpos];
-			inputpos++;
-			bufpos++;
+			_putchar(str[i]);
+			count++;
 		}
+		i++;
 	}
-	write(1, buffer, bufpos);
-	va_end(arg);
-	return (0);
+	va_end(ap);
+	return (count);
+}
+/**
+ * formattype - match the char passed from _printf to type_dict and
+ * then send the arg to the proper function and get back a string.
+ * @a: a char from _printf for matching
+ * @ap: are argument list var
+ * Return: we should get a string back from our print fuctions
+ * and we return a pointer to that string so our else while loop in
+ * _printf can append it to the buffer.
+ */
+int formattype(char a, va_list ap)
+{
+	int i = 0;
+	int tmp = 0;
+	pt type_dict[] = {
+		{'c', print_char},
+		{'s', print_string},
+		/*{'i', print_int},*/
+		{'\0', NULL}
+		};
+	while (type_dict[i].type)
+	{
+		if (a == type_dict[i].type)
+		{
+			tmp = type_dict[i].f(ap);
+			return (tmp);
+		}
+		i++;
+	}
+	_putchar('%');
+	_putchar(a);
+	tmp = 2;
+	return (tmp);
 }
