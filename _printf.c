@@ -61,8 +61,12 @@ int formattype(char a, va_list ap)
 		if (a == type_dict[i].type)
 		{
 			tmp = type_dict[i].f(ap);
+			return (tmp);
 		}
 		i++;
 	}
+	_putchar('%');
+	_putchar(a);
+	tmp = 2;
 	return (tmp);
 }
